@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+<div class="flex flex-row">
+
+    <!-- left sidebar -->
+     
+    <div class=" h-auto p-3 space-y-2 w-60 dark:bg-gray-50 dark:text-gray-800 bg-gray-100">
+        <div class="flex items-center p-2 space-x-4">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGNBuKZS2dQ8gViURYxqj0ih63BJgwf4e1KAPzMc1AyYVjDkc_" alt="" class="w-12 h-12 rounded-full dark:bg-gray-500">
+            <div>
+                <h2 class="text-lg font-semibold">Isaac Newton</h2>
+                <span class="flex items-center space-x-1">
+                    <a id="profileBtn" rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-600">View profile</a>
+                </span>
+            </div>
+        </div>
+        <div class="divide-y dark:divide-gray-300">
+            <ul class="pt-2 pb-4 space-y-1 text-sm">
+                <li id="dashboardBtn" class="dark:bg-gray-100 dark:text-gray-900 hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="searchBtn" class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+                        </svg>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li id="chatBtn" class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M448.205,392.507c30.519-27.2,47.8-63.455,47.8-101.078,0-39.984-18.718-77.378-52.707-105.3C410.218,158.963,366.432,144,320,144s-90.218,14.963-123.293,42.131C162.718,214.051,144,251.445,144,291.429s18.718,77.378,52.707,105.3c33.075,27.168,76.861,42.13,123.293,42.13,6.187,0,12.412-.273,18.585-.816l10.546,9.141A199.849,199.849,0,0,0,480,496h16V461.943l-4.686-4.685A199.17,199.17,0,0,1,448.205,392.507ZM370.089,423l-21.161-18.341-7.056.865A180.275,180.275,0,0,1,320,406.857c-79.4,0-144-51.781-144-115.428S240.6,176,320,176s144,51.781,144,115.429c0,31.71-15.82,61.314-44.546,83.358l-9.215,7.071,4.252,12.035a231.287,231.287,0,0,0,37.882,67.817A167.839,167.839,0,0,1,370.089,423Z"></path>
+                            <path d="M60.185,317.476a220.491,220.491,0,0,0,34.808-63.023l4.22-11.975-9.207-7.066C62.918,214.626,48,186.728,48,156.857,48,96.833,109.009,48,184,48c55.168,0,102.767,26.43,124.077,64.3,3.957-.192,7.931-.3,11.923-.3q12.027,0,23.834,1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072,30.279,228.3,16,184,16S97.928,30.279,66.364,56.206C33.886,82.885,16,118.63,16,156.857c0,35.8,16.352,70.295,45.25,96.243a188.4,188.4,0,0,1-40.563,60.729L16,318.515V352H32a190.643,190.643,0,0,0,85.231-20.125,157.3,157.3,0,0,1-5.071-33.645A158.729,158.729,0,0,1,60.185,317.476Z"></path>
+                        </svg>
+                        <span>Chat</span>
+                    </a>
+                </li>
+                <li id="orderBtn" class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M203.247,386.414,208,381.185V355.4L130.125,191H93.875L16,355.4v27.042l4.234,4.595a124.347,124.347,0,0,0,91.224,39.982h.42A124.343,124.343,0,0,0,203.247,386.414ZM176,368.608a90.924,90.924,0,0,1-64.231,26.413h-.33A90.907,90.907,0,0,1,48,369.667V362.6l64-135.112L176,362.6Z"></path>
+                            <path d="M418.125,191h-36.25L304,355.4v27.042l4.234,4.595a124.347,124.347,0,0,0,91.224,39.982h.42a124.343,124.343,0,0,0,91.369-40.607L496,381.185V355.4ZM464,368.608a90.924,90.924,0,0,1-64.231,26.413h-.33A90.907,90.907,0,0,1,336,369.667V362.6l64-135.112L464,362.6Z"></path>
+                            <path d="M272,196.659A56.223,56.223,0,0,0,309.659,159H416V127H309.659a55.991,55.991,0,0,0-107.318,0H96v32H202.341A56.223,56.223,0,0,0,240,196.659V463H136v32H376V463H272ZM232,143a24,24,0,1,1,24,24A24,24,0,0,1,232,143Z"></path>
+                        </svg>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li id="wishBtn" class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
+                        </svg>
+                        <span>Wishlist</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pt-4 pb-2 space-y-1 text-sm">
+                <li class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M245.151,168a88,88,0,1,0,88,88A88.1,88.1,0,0,0,245.151,168Zm0,144a56,56,0,1,1,56-56A56.063,56.063,0,0,1,245.151,312Z"></path>
+                            <path d="M464.7,322.319l-31.77-26.153a193.081,193.081,0,0,0,0-80.332l31.77-26.153a19.941,19.941,0,0,0,4.606-25.439l-32.612-56.483a19.936,19.936,0,0,0-24.337-8.73l-38.561,14.447a192.038,192.038,0,0,0-69.54-40.192L297.49,32.713A19.936,19.936,0,0,0,277.762,16H212.54a19.937,19.937,0,0,0-19.728,16.712L186.05,73.284a192.03,192.03,0,0,0-69.54,40.192L77.945,99.027a19.937,19.937,0,0,0-24.334,8.731L21,164.245a19.94,19.94,0,0,0,4.61,25.438l31.767,26.151a193.081,193.081,0,0,0,0,80.332l-31.77,26.153A19.942,19.942,0,0,0,21,347.758l32.612,56.483a19.937,19.937,0,0,0,24.337,8.73l38.562-14.447a192.03,192.03,0,0,0,69.54,40.192l6.762,40.571A19.937,19.937,0,0,0,212.54,496h65.222a19.936,19.936,0,0,0,19.728-16.712l6.763-40.572a192.038,192.038,0,0,0,69.54-40.192l38.564,14.449a19.938,19.938,0,0,0,24.334-8.731L469.3,347.755A19.939,19.939,0,0,0,464.7,322.319Zm-50.636,57.12-48.109-18.024-7.285,7.334a159.955,159.955,0,0,1-72.625,41.973l-10,2.636L267.6,464h-44.89l-8.442-50.642-10-2.636a159.955,159.955,0,0,1-72.625-41.973l-7.285-7.334L76.241,379.439,53.8,340.562l39.629-32.624-2.7-9.973a160.9,160.9,0,0,1,0-83.93l2.7-9.972L53.8,171.439l22.446-38.878,48.109,18.024,7.285-7.334a159.955,159.955,0,0,1,72.625-41.973l10-2.636L222.706,48H267.6l8.442,50.642,10,2.636a159.955,159.955,0,0,1,72.625,41.973l7.285,7.334,48.109-18.024,22.447,38.877-39.629,32.625,2.7,9.972a160.9,160.9,0,0,1,0,83.93l-2.7,9.973,39.629,32.623Z"></path>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="hover:bg-blue-400 hover:text-white hover:rounded-lg">
+                    <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-600">
+                            <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
+                            <rect width="32" height="64" x="256" y="232"></rect>
+                        </svg>
+                        <span >Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+
+    <div id="dashboard" class=" ml-20 pt-14">
+        <!-- This is for main user data and content -->
+        <div class="p-6 flex-1">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-6">Dashboard</h1>
+        
+            <!-- Analytics Cards -->
+            <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+                <!-- Views Card -->
+                <div class="flex items-center p-4 bg-white rounded-lg shadow">
+                    <div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 2.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm-4.93 2.485a8.003 8.003 0 0113.86 0m-13.86 0A10.963 10.963 0 0012 4.5c3.042 0 5.785 1.242 7.93 3.485m-13.86 0A10.963 10.963 0 004.5 12c0 3.042 1.242 5.785 3.485 7.93m13.86 0A8.003 8.003 0 0112 19.5c-3.042 0-5.785-1.242-7.93-3.485"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="mb-2 text-sm font-medium text-gray-600">Total Views</p>
+                        <p class="text-lg font-semibold text-gray-700">1.2M</p>
+                    </div>
+                </div>
+        
+                <!-- Subscribers Card -->
+                <div class="flex items-center p-4 bg-white rounded-lg shadow">
+                    <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 8v10m4-6H4m10-6h4a2 2 0 012 2v8a2 2 0 01-2 2h-4m-4 0H8a2 2 0 01-2-2V10a2 2 0 012-2h4m0-4H8a2 2 0 00-2 2v2m0 10h4m4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="mb-2 text-sm font-medium text-gray-600">Subscribers</p>
+                        <p class="text-lg font-semibold text-gray-700">12K</p>
+                    </div>
+                </div>
+        
+                <!-- Watch Time Card -->
+                <div class="flex items-center p-4 bg-white rounded-lg shadow">
+                    <div class="p-3 mr-4 text-red-500 bg-red-100 rounded-full">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m7-2a9 9 0 11-6.325-8.906m1.856 1.803a7.005 7.005 0 104.69 4.69m-4.69-4.69L19 4m-7 16v.01"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="mb-2 text-sm font-medium text-gray-600">Watch Time</p>
+                        <p class="text-lg font-semibold text-gray-700">850 hours</p>
+                    </div>
+                </div>
+        
+                <!-- Revenue Card -->
+                <div class="flex items-center p-4 bg-white rounded-lg shadow">
+                    <div class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 2.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm-4.93 2.485a8.003 8.003 0 0113.86 0m-13.86 0A10.963 10.963 0 0012 4.5c3.042 0 5.785 1.242 7.93 3.485m-13.86 0A10.963 10.963 0 004.5 12c0 3.042 1.242 5.785 3.485 7.93m13.86 0A8.003 8.003 0 0112 19.5c-3.042 0-5.785-1.242-7.93-3.485"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="mb-2 text-sm font-medium text-gray-600">Revenue</p>
+                        <p class="text-lg font-semibold text-gray-700">$4.5K</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Recent Activity -->
+            <div class="mt-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Activity</h2>
+                <div class="bg-white shadow rounded-lg p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="text-left text-gray-600">
+                                <th class="pb-2">Video Title</th>
+                                <th class="pb-2">Date</th>
+                                <th class="pb-2">Views</th>
+                                <th class="pb-2">Likes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-gray-700">
+                                <td class="py-2">How to use Tailwind CSS</td>
+                                <td class="py-2">Aug 17, 2024</td>
+                                <td class="py-2">15,000</td>
+                                <td class="py-2">1,200</td>
+                            </tr>
+                            <tr class="text-gray-700">
+                                <td class="py-2">React vs. Vue: Which is better?</td>
+                                <td class="py-2">Aug 16, 2024</td>
+                                <td class="py-2">25,000</td>
+                                <td class="py-2">2,300</td>
+                            </tr>
+                            <tr class="text-gray-700">
+                                <td class="py-2">Understanding JavaScript Closures</td>
+                                <td class="py-2">Aug 15, 2024</td>
+                                <td class="py-2">10,000</td>
+                                <td class="py-2">800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- secrch box -->
+     <div id="searchItem" class=" ml-20 pt-14 hidden">
+        <div >
+            <!-- Main Content -->
+            <main class="flex-1 p-6">
+                <!-- Search Bar -->
+                <div class="flex items-center mb-6">
+                    <input 
+                        type="text" 
+                        placeholder="Search..." 
+                        class="w-full p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <button class="p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600">
+                        Search
+                    </button>
+                </div>
+    
+                <!-- Dashboard Header -->
+                <h1 class="text-2xl font-semibold text-gray-800 mb-6">Dashboard</h1>
+    
+                <!-- Analytics Cards -->
+                <div class="grid gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Card 1</h3>
+                        <p class="text-gray-600">Some content here</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Card 2</h3>
+                        <p class="text-gray-600">Some content here</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Card 3</h3>
+                        <p class="text-gray-600">Some content here</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Card 4</h3>
+                        <p class="text-gray-600">Some content here</p>
+                    </div>
+                </div>
+    
+                <!-- Recent Activity -->
+                <div class="mt-8">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Activity</h2>
+                    <div class="bg-white shadow rounded-lg p-4">
+                        <ul>
+                            <li class="mb-2">
+                                <h4 class="font-semibold">Activity 1</h4>
+                                <p class="text-gray-600">Details about activity 1</p>
+                            </li>
+                            <li class="mb-2">
+                                <h4 class="font-semibold">Activity 2</h4>
+                                <p class="text-gray-600">Details about activity 2</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- History Section -->
+                <div class="mt-8">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">History</h2>
+                    <div class="bg-white shadow rounded-lg p-4">
+                        <ul>
+                            <li class="flex justify-between mb-4">
+                                <div>
+                                    <h3 class="font-semibold text-gray-700">How to use Tailwind CSS</h3>
+                                    <p class="text-sm text-gray-500">Viewed on Aug 17, 2024</p>
+                                </div>
+                                <button class="text-blue-500 hover:text-blue-600">View Again</button>
+                            </li>
+                            <li class="flex justify-between mb-4">
+                                <div>
+                                    <h3 class="font-semibold text-gray-700">React vs. Vue: Which is better?</h3>
+                                    <p class="text-sm text-gray-500">Viewed on Aug 16, 2024</p>
+                                </div>
+                                <button class="text-blue-500 hover:text-blue-600">View Again</button>
+                            </li>
+                            <li class="flex justify-between mb-4">
+                                <div>
+                                    <h3 class="font-semibold text-gray-700">Understanding JavaScript Closures</h3>
+                                    <p class="text-sm text-gray-500">Viewed on Aug 15, 2024</p>
+                                </div>
+                                <button class="text-blue-500 hover:text-blue-600">View Again</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- chatbox main -->
+    <div id="chatboxItem" class=" ml-20 pt-14 hidden">
+        <div class="flex h-screen max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <!-- Contacts Sidebar -->
+            <aside class="w-64 bg-gray-50 border-r border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                    <h2 class="text-lg font-semibold">Contacts</h2>
+                </div>
+                <div class="p-4 overflow-y-auto h-screen">
+                    <!-- Contact Item -->
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">John Doe</span>
+                    </div>
+                    <!-- Add more contacts here -->
+                    <!-- Sample Contacts -->
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Jane Smith</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Alice Johnson</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Bob Brown</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Charlie Davis</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">David Evans</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Ella Fitzgerald</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Frank Green</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Grace Harris</span>
+                    </div>
+                    <div class="flex items-center p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+                        <img src="https://clipart-library.com/new_gallery/45-455875_black-person-png-business-professional-man-png.png" alt="Contact" class="w-10 h-10 rounded-full mr-3">
+                        <span class="font-semibold">Hannah Ives</span>
+                    </div>
+                </div>
+            </aside>
+    
+            <!-- Chat Area -->
+            <main class="flex-1 flex flex-col w-[42rem]">
+                <!-- Chat Header -->
+                <header class="bg-blue-600 text-white p-4 border-b border-gray-200">
+                    <h1 class="text-xl font-semibold">John Doe</h1>
+                </header>
+                
+                <!-- Chat Messages -->
+                <div class="flex-1 overflow-y-auto p-4 bg-gray-50">
+                    <div class="space-y-4">
+                        <!-- Message from User -->
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+                                <p>Hello! How are you?</p>
+                            </div>
+                        </div>
+                        <!-- Message from Contact -->
+                        <div class="flex items-start justify-end">
+                            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg max-w-xs">
+                                <p>I'm good, thanks! How about you?</p>
+                            </div>
+                        </div>
+                        <!-- Add more messages here -->
+                    </div>
+                </div>
+                
+                <!-- Message Input -->
+                <div class="bg-white p-3 border-t border-gray-200">
+                    <div class="flex items-center">
+                        <input 
+                            type="text" 
+                            placeholder="Type a message..." 
+                            class="w-full p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                        <button class="p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600">
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- order section -->
+     <div id="orderItem" class=" ml-20 pt-14 hidden">
+        <div class="flex h-screen max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+
+    
+            <!-- Main Content -->
+            <main class="flex-1 p-6">
+                <!-- My Orders -->
+                <section id="orders" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Orders</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="p-2 text-gray-700">Order ID</th>
+                                    <th class="p-2 text-gray-700">Date</th>
+                                    <th class="p-2 text-gray-700">Status</th>
+                                    <th class="p-2 text-gray-700">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Order Item -->
+                                <tr class="border-b">
+                                    <td class="p-2">#12345</td>
+                                    <td class="p-2">Aug 20, 2024</td>
+                                    <td class="p-2 text-green-600">Shipped</td>
+                                    <td class="p-2">$120.00</td>
+                                </tr>
+                                <!-- Add more orders here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+    
+                <!-- Recent Purchases -->
+                <section id="recent" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recent Purchases</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            <!-- Purchase Item -->
+                            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                                <h3 class="text-xl font-semibold text-gray-800">Product Name</h3>
+                                <p class="text-gray-600">Purchased on Aug 20, 2024</p>
+                                <p class="text-gray-800 font-semibold">$45.00</p>
+                            </div>
+                            <!-- Add more purchases here -->
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Products -->
+                <section id="products" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Products</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            <!-- Product Item -->
+                            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                                <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
+                                <p class="text-gray-600">Description of Product 1.</p>
+                                <p class="text-gray-800 font-semibold">$30.00</p>
+                            </div>
+                            <!-- Add more products here -->
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Account Settings -->
+                <section id="settings">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Account Settings</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <form>
+                            <!-- Username -->
+                            <div class="mb-4">
+                                <label for="username" class="block text-gray-700">Username</label>
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    placeholder="john_doe" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Email -->
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    placeholder="johndoe@example.com" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Password -->
+                            <div class="mb-4">
+                                <label for="password" class="block text-gray-700">Password</label>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    placeholder="••••••••" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Submit Button -->
+                            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
+                                Save Changes
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+     </div>
+
+     <!-- Wishlist Section -->
+     <div id="wishtItem" class=" ml-20 pt-14 hidden">
+        <section class="mt-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Wishlist</h2>
+            <div class="bg-white shadow rounded-lg p-6">
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Wishlist Item -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <img class="h-[200px] w-auto" src="../images/product.png" alt="">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product 1</h3>
+                        <p class="text-gray-600 mb-2">Description of Product 1.</p>
+                        <p class="text-gray-800 font-semibold mb-2">$30.00</p>
+                        <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add to Cart</button>
+                    </div>
+                    <!-- Wishlist Item -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <img class="h-[200px] w-auto" src="../images/product.png" alt="">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product 2</h3>
+                        <p class="text-gray-600 mb-2">Description of Product 2.</p>
+                        <p class="text-gray-800 font-semibold mb-2">$45.00</p>
+                        <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add to Cart</button>
+                    </div>
+                    <!-- Wishlist Item -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <img class="h-[200px] w-auto" src="../images/product.png" alt="">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product 3</h3>
+                        <p class="text-gray-600 mb-2">Description of Product 3.</p>
+                        <p class="text-gray-800 font-semibold mb-2">$60.00</p>
+                        <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add to Cart</button>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <img class="h-[200px] w-auto" src="../images/product.png" alt="">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product 4</h3>
+                        <p class="text-gray-600 mb-2">Description of Product 3.</p>
+                        <p class="text-gray-800 font-semibold mb-2">$60.00</p>
+                        <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add to Cart</button>
+                    </div>
+                    <!-- Add more wishlist items here -->
+                </div>
+            </div>
+        </section>
+     </div>
+
+     <!-- profile Section -->
+      <div id="profileItem" class=" ml-20 pt-14 hidden">
+        <div class="flex flex-col max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <!-- Profile Header -->
+            <div class="bg-blue-500 text-white p-6 flex items-center">
+                <div class="w-24 h-24 rounded-full bg-gray-300 overflow-hidden">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGNBuKZS2dQ8gViURYxqj0ih63BJgwf4e1KAPzMc1AyYVjDkc_" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+                <div class="ml-6">
+                    <h1 class="text-3xl font-bold">isaac newton</h1>
+                    <p class="text-lg">newton@gmail.com</p>
+                    <p class="text-sm text-gray-300">Joined: August 20, 2024</p>
+                </div>
+            </div>
+    
+            <!-- Profile Content -->
+            <div class="p-6">
+                <!-- Overview -->
+                <section id="overview" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Overview</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Account Information</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <strong class="text-gray-600">Username:</strong>
+                                <p class="text-gray-800">john_doe</p>
+                            </div>
+                            <div>
+                                <strong class="text-gray-600">Email:</strong>
+                                <p class="text-gray-800">john.doe@example.com</p>
+                            </div>
+                            <div>
+                                <strong class="text-gray-600">Address:</strong>
+                                <p class="text-gray-800">123 Main St, Anytown, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Recent Orders -->
+                <section id="orders" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recent Orders</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="p-2 text-gray-700">Order ID</th>
+                                    <th class="p-2 text-gray-700">Date</th>
+                                    <th class="p-2 text-gray-700">Status</th>
+                                    <th class="p-2 text-gray-700">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-2">#12345</td>
+                                    <td class="p-2">Aug 20, 2024</td>
+                                    <td class="p-2 text-green-600">Shipped</td>
+                                    <td class="p-2">$120.00</td>
+                                </tr>
+                                <!-- Add more orders here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+    
+                <!-- Wishlist -->
+                <section id="wishlist" class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Wishlist</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            <!-- Wishlist Item -->
+                            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Product 1</h3>
+                                <p class="text-gray-600 mb-2">Description of Product 1.</p>
+                                <p class="text-gray-800 font-semibold mb-2">$30.00</p>
+                                <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add to Cart</button>
+                            </div>
+                            <!-- Add more wishlist items here -->
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Account Settings -->
+                <section id="settings">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Account Settings</h2>
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <form>
+                            <!-- Username -->
+                            <div class="mb-4">
+                                <label for="username" class="block text-gray-700">Username</label>
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    value="john_doe" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Email -->
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    value="john.doe@example.com" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Password -->
+                            <div class="mb-4">
+                                <label for="password" class="block text-gray-700">Password</label>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    placeholder="••••••••" 
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <!-- Submit Button -->
+                            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
+                                Save Changes
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+      </div>
+
+
+<script src="./main.js"></script>
+</body>
+</html>
